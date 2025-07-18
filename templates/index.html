@@ -38,14 +38,17 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-8">
+
 			        {% for post in fresh_posts %}
                 <div class="single-recent-blog-post">
                   <div class="thumb">
+
 				            {% if post.image_url %}
                       <img class="img-fluid" src="{{post.image_url}}" alt="Image preview post">
 				            {% else %}
 				              <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="Default image preview post">
 				            {% endif %}
+                    
                     <ul class="thumb-info" style="max-width: 550px;">
                       <li><a href="{% url 'post_detail' slug=post.slug %}"><i class="ti-user"></i>{{post.author}}</a></li>
                       <li><a href="{% url 'post_detail' slug=post.slug %}"><i class="ti-notepad"></i>{{post.published_at}}</a></li>
@@ -59,6 +62,7 @@
                   </div>
                 </div>
 			        {% endfor %}
+
               <div class="row">
                 <div class="col-lg-12">
                   <nav class="blog-pagination justify-content-center d-flex">
